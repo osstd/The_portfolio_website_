@@ -92,7 +92,7 @@ def award():
 def test(num):
     filename = f'assets/test/{num}.pdf'
     file_path = url_for('static', filename=filename)
-    return render_template('testimonial.html', path=file_path)
+    return redirect(file_path)
 
 
 @app.route('/slides')
