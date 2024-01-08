@@ -1,0 +1,43 @@
+{% from "bootstrap5/form.html" import render_form %}
+{% include 'header.html' %}
+
+
+<main class="mb-4">
+    <div style="padding-top:45px;" class="container">
+        <div class="row align-items-center">
+            <div class="mt-4"></div>
+            <div class="mt-4"></div>
+            <div class="col-md-6">
+                <div>
+                    <p style="font-size:25px;">Norseman Heights Etobicoke, ON</p>
+                    <p><a class="list-item" data-toggle="popover" data-content="To email or call, simply click
+                    the links below, alternatively use the Contact Form."
+                          href="mailto:omar.elshemy@mail.mcgill.ca">omar.elshemy@mail.mcgill.ca</a></p>
+                    <p style="font-size:15px;">Cell <a href="tel:+14388702112">+1 (438) 870-2112</a></p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mt-2 py-3">
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    {% for message in messages %}
+                    <p class="flashes">
+                        <strong>{{message}}</strong>
+                    </p>
+                    {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                    <div><p class="list-item" data-toggle="popover" data-content="To send me an email, or a text
+                    please fill the form." style="font-size:25px;">Contact Form</p></div>
+                    {{ render_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+                    <span id="charCount"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+
+</script>
+{% include 'footer.html' %}
+

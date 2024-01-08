@@ -1,0 +1,31 @@
+{% include 'header.html' %}
+
+
+<main class="d-flex align-items-center mt-4 mb-4">
+    <div class="container">
+        <section class="hero">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="mt-5"></div>
+                    <div class="mt-5"></div>
+                    <div class="col-md-6">
+                        <div class="text-center">
+                            <h1 style="font-size:1.5rem;" class="display-4">Turning Lines of Code into Innovation:
+                                Unleashing the Power of Engineering.</h1>
+                            <p class="lead"></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="text-center">
+                            <img src="{{url_for('static', filename='assets/img/profile.jpg')}}" alt="Profile Photo"
+                                 class="img-fluid rounded-circle" style="width: 315px; height: 315px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+{% include 'footer.html' %}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar Shemy</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.png') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header, footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em;
+            h1 {font-size:30px;}
+            a {font-size:13px; color: white;}
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        #main-content {
+            padding: 1em;
+            justify-content: center;
+            display: flex;
+            align-items:center;
+        }
+
+        #presentation {
+            max-width: 750px;
+            margin: 20px auto;
+        }
+        .carousel-inner {
+            width:100%;
+            overflow:hidden;
+        }
+        .carousel-item {
+            text-align: center;
+        }
+        .carousel-item img {
+            max-width: 100%
+            height: auto;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div>
+        <h1>Masters Seminar</h1>
+    </div>
+</header>
+
+<div id="main-content">
+
+    <div id="presentation" class="carousel slide" data-ride="carousel">
+
+        <div class="carousel-inner">
+            {% for index, path in image_paths: %}
+            <div class="carousel-item {% if index == 0 %}active{% endif %}">
+                <img src="{{path}}" class="d-block w-100" alt="Slide {{ index + 1 }}">
+            </div>
+            {% endfor %}
+        </div>
+
+        <a class="carousel-control-prev" href="#presentation" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#presentation" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+
+</div>
+
+<footer >
+    <span><a href="{{url_for('home')}}">Home</a> · <a href="{{url_for('experience')}}">Experience</a> · <a href="{{url_for('grad')}}">Graduate</a></span>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

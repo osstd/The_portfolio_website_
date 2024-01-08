@@ -1,0 +1,143 @@
+    body {
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+    flex: 1;
+    }
+    footer {
+      background-color: #062081;
+      color: #fff;
+      padding: 10px 0;
+    }
+    footer {
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    }
+
+    .navbar-nav {
+      margin-left: auto;
+    }
+    .nav-item {
+      margin-right: 15px;
+    }
+    .navbar.fixed-top {
+    background-color: #062081
+    }
+
+    .navbar {
+    transition: background-color 0.3s ease;
+    }
+
+    .navbar.scrolled {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #eeeeef;
+    }
+
+    .navbar-light .navbar-brand {
+      font-size: 2.0em;
+      color:white;
+    }
+
+    .navbar-light .navbar-brand.scrolled {
+      font-size: 1.5em;
+      color:black;
+    }
+
+    .navbar-light .navbar-nav .nav-item.active .nav-link {
+    color: white;
+    }
+
+    .navbar-light .navbar-nav .nav-item.active .nav-link.scrolled {
+    color: black;
+    }
+    .navbar-light .navbar-nav .nav-link {
+    color: white;
+    }
+    .navbar-light .navbar-nav .nav-link.scrolled {
+    color: black;
+    }
+
+
+    .btn-custom {
+    background-color: #062081;
+    color: #fff;
+    border-color: #062081;
+    }
+    .projects {
+    display: flex;
+    align-items: center;
+    }
+    .projects img {
+    mix-blend-mode: multiply;
+    opacity: 0.8;
+    }
+
+    .empty-space {
+    height: 50px;
+    }
+
+    .t-j {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 15px;
+    margin-bot: 15px;
+    font-size: 0.85rem;
+    }
+
+    .list-item-c {
+    position: relative;
+    }
+
+    .item-text {
+    display: block;
+    transition: margin-bottom 2s ease;
+    cursor:pointer;
+    }
+
+    .description {
+        display: none;
+        padding: 10px;
+        background-color: #ffffff;
+    }
+
+    .list-item-c:hover .item-text{
+        margin-bottom: 10px;
+    }
+
+    .list-item-c:hover .description {
+        display: block;
+    }
+
+    .list-item-cs {
+    position: relative;
+    }
+
+    .list-item-cs:hover .item-text{
+        margin-bottom: 10px;
+    }
+
+    .list-item-cs:hover .description {
+        display: block;
+    }
+
+     .list-item-cc.item-text {
+        list-style-type: disc;
+        overflow: hidden;
+    }
+
+    .list-item-cc .description {
+        display:none;
+    }
+
+    a{
+    color:#062081;
+    }
+
+
+
+

@@ -1,0 +1,52 @@
+{% include 'header.html' %}
+
+<main class="d-flex align-items-center mt-4 mb-4">
+    <div class="row">
+        <div class="mt-5"></div>
+        <div class="mt-5"></div>
+        <div class="container text-center col-md-8">
+            <img src="{{url_for('static', filename='assets/img/cover.jpg')}}" alt="Project Photo" class="img-fluid"
+                 style="mix-blend-mode: multiply; opacity:0.8;">
+
+        </div>
+        <div class="container  col-md-8" style="text-align:left">
+            <p style="margin-top: 30px" class="t-j">
+                Hello, I'm Omar, and my journey into the world of software development is as unique as the skills I
+                bring to the table. My professional path has been a dynamic blend of technical prowess, leadership
+                experience, and a relentless commitment to excellence.</p>
+
+            <p class="t-j">With a foundation in Structural Engineering, I've honed my abilities to break down complex
+                problems and always return to first principles. From managing teams during lab work and providing instructions
+                during engineering design and leading tutorial sessions for large groups of students, I've developed a
+                versatility that extends from the technical to the interpersonal.</p>
+
+            <p class="t-j">My academic journey reached its zenith with a perfect GPA in my Master's of
+                Structural Engineering. I proudly stand as the sole recipient of the Robert Forsyth Award, a testament
+                to my
+                excellence in the theory of structural design. Scoring the highest final grade on three courses during
+                my undergrad showcased my diligence, accuracy, and commitment to perfection in every task.</p>
+
+            <p class="t-j">Transitioning into the professional realm, I rapidly gained expertise as a Junior Engineer
+                at D.L. Turner Consultants Inc. in Montreal and Ojdrovic Engineering Inc. in Toronto, where I was
+                responsible for the coordination, structural analysis, and design of diverse residential and industrial
+                buildings. I seamlessly assumed several of the responsibilities of a seasoned senior engineer, demonstrating
+                intelligence, dedication, and an unmatched ability to grasp and execute complex concepts with speed and precision.</p>
+
+            <p class="t-j">Fueling my passion for technology, I've delved into coding, reaching a professional level in
+                a short time. I am confident in my ability to contribute effectively as a software developer. My unique
+                journey has equipped me with a rare blend of skills, enabling me to relate to all levels of management,
+                collaborate across diverse teams, and tackle challenges with a holistic approach.</p>
+            <p class="t-j">Beyond professional dedication, I enjoy endurance training and recreational rock climbing.
+                I was the Teaching Assistants’ Representative of the Civil Engineering Graduate Student Society at
+                McGill University. I have a passion for global exploration and culinary adventures, embracing the
+                opportunity to travel and savor diverse cuisines.</p>
+            <p class="t-j">Join me on this exciting journey where engineering principles meet the innovation of code,
+                and where diverse experiences converge into a singular passion for excellence in software
+                development.</p>
+            <div class="text-center"><a href="{{url_for('contact')}}" class="btn btn-custom btn-primary btn-lg mt-3">Contact
+                Me</a></div>
+        </div>
+    </div>
+</main>
+
+{% include 'footer.html' %}

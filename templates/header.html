@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Omar Shemy</title>
+  {% block styles %}
+  {{bootstrap.load_css()}}
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.png') }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+
+  {% endblock %}
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+      <a class="navbar-brand" href="{{url_for('home')}}">Omar Shemy</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="{{url_for('home')}}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('about')}}">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('projects')}}">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('experience')}}">Experience</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://the-blog-13ns.onrender.com">The Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{url_for('contact')}}">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+
+

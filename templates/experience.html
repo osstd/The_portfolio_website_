@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omar Shemy</title>
+    {{bootstrap.load_css()}}
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.png') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+    <style>
+      h2 {font-size:20px;}
+      h3{font-size:15px;}
+      p{font-size:13px;}
+      .card-body li{font-size:12px;}
+      #card ul {
+        list-style-type: none;
+        padding:0;
+        margin:0;
+      }
+      #card strong {
+      font-size:15px;
+      }
+      #card ul ul {
+        list-style-type: disc;
+        padding-left: 30px;
+      }
+      footer {
+          padding: 10px 0;
+        }
+        footer {
+        text-align: center;
+        position: sticky;
+        bottom: 0;
+        width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<main class="container mb-4">
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="mt-4">
+                    <h2>Experience</h2>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h3 class="card-title">Structural EIT</h3>
+                        <p class="card-text"><b>Ojdrovic Engineering Inc. </b>, Toronto | Aug 2023 – Sept 2023</p>
+                        <ul>
+                            <li>Coordination, Analysis and Design of Reinforced Masonry and Steel Structures</li>
+                            <li>Performed load feasibility studies, façade and masonry inspection reports and
+                                multiple construction site visits reports</a></li>
+                        </ul>
+                        <h3 class="card-title">Junior Engineer</h3>
+                        <p class="card-text"><b>D.L. Turner Consultants Inc. </b>, Montreal | Aug 2021 – Apr 2023</p>
+                        <ul>
+                            <li>Coordination, Analysis and Design of Reinforced Concrete, Steel and Wood Structures</li>
+                            <li>Analyzed several industrial steel structures and multistory concrete structures,
+                                designed gravity members & seismic force resisting systems
+                            </li>
+                            <li>Coordinated the structure of multiple deluxe houses with intricate architectural
+                                layouts
+                            </li>
+                            <li>Participated in coordination meetings with a team of architects, structural engineers,
+                                mechanical engineers and general contractors to realize client requirements while
+                                ensuring
+                                structural feasibility and balancing environmental impact
+                            </li>
+                        </ul>
+                        <p style="font-size:11px;">Detailed structural engineering experience <a
+                                href="{{url_for('eng')}}">here</a>.</p>
+                        <h3 class="card-title">Graduate Researcher</h3>
+                        <p class="card-text"><b>McGill University</b>, Montreal | May 2018 – Aug 2021</p>
+                        <ul>
+                            <li>Developed a <a href="https://escholarship.mcgill.ca/concern/theses/7p88cn55z">novel
+                                formula</a> to predict the shear strength of short
+                                rectangular
+                                bridge columns
+                            </li>
+                            <li>Worked with a team of colleagues to organize testing schedules, discuss research
+                                ideas,
+                                and generate creative solutions
+                            </li>
+                            <li>Produced extensive report, including a literature review, testing methodologies,
+                                detailed discussion, and analysis of results
+                            </li>
+                        </ul>
+                        <p style="font-size:11px;">More details on graduate research <a
+                                href="{{url_for('grad')}}">here</a>. Also, <a
+                                href="https://doi.org/10.1061/(ASCE)BE.1943-5592.0001824">Tech Paper</a> - <a
+                                href="{{url_for('slides')}}">Seminar</a>
+                        </p>
+                        <h3 class="card-title">Teaching Assistant</h3>
+                        <p class="card-text"><b>McGill University</b>, Montreal | Sept 2019 – May 2021</p>
+                        <ul>
+                            <li>Teaching Assistant for Design of Concrete Structures, Construction Engineering and
+                                Design Graphics & AutoCAD
+                            </li>
+                            <li>Independently supervised and guided classes of 50 students on average and tutored
+                                over 400 students in total; recorded on demand videos for virtual classes and assigned
+                                online tasks to promote teamwork and creativity
+                            </li>
+                            <li>Provided one-on-one support and student mentoring to address varying concerns in weekly
+                                office hours
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <h2>Education</h2>
+                <div class="card mb-3">
+                    <div class="card-body" id="card">
+                        <ul>
+
+                            <li class="list-item-cc">
+                                <p class="item-text"><strong>Master of Science (Thesis), Structural Engineering</strong><br><b>McGill
+                                    University,</b> Montreal | Jan 2019 – Aug 2021
+                                </p>
+                                <div class="description">
+                                    <p>
+                                        Activities and societies: Teaching Assistants’ Representative of the Civil
+                                        Engineering Graduate Student Society | Canadian Society of Civil Engineers |
+                                        American Society of Civil Engineers | American Concrete Institute
+                                    </p>
+                                    <ul>
+                                        <li>Thesis focused on the shear strength of short shear-critical reinforced
+                                            concrete bridge columns, working with the renowned Dr Denis Mitchell
+                                        </li>
+                                        <li>Courses included: Structural Dynamics, Finite Element Analysis and Advanced
+                                            Materials
+                                        </li>
+                                        <li>Received MEUSMA scholarship – full funding merit-based award</li>
+                                        <li>Received Graduate Excellence and NSERC merit-based awards</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="list-item-cc">
+                                <p class="item-text"><strong>Bachelor of Engineering, Civil</strong><br><b>McGill
+                                    University,</b> Montreal | Sep 2013 – Aug 2018
+                                </p>
+                                <div class="description">
+                                    <p>
+                                        Activities and societies: APT PETC Masonry Arch Competition | Canadian Society
+                                        of Civil Engineers
+                                    </p>
+                                    <ul>
+                                        <li>Probabilistic Systems, Statistics, Systems Analysis & Linear Programming,
+                                            Computer Programming for Engineering, Construction Engineering and
+                                            Sustainable Project Management
+                                        </li>
+                                        <li>Graduated with a Distinction (Top 15%) and holder of 3 merit-based awards
+                                        </li>
+                                        <li>Sole winner of the Robert Forsyth award for high standing in the subjects of
+                                            theory of structural design
+                                        </li>
+                                        <li>Scored the highest final grade on Concrete Design, Geotechnical Engineering
+                                            and Construction Engineering courses
+                                        </li>
+                                    </ul>
+                                    <p style="font-size:0.65rem; padding-left:30px;">
+                                        <a href="{{url_for('test', num=13)}}">Technical writing</a> · <a
+                                            href="{{url_for('test', num=14)}}">Capstone</a>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Scholastic Achievements and Extracurriculars </h2>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <p class="card-text"><strong>NSERC Award</strong>, McGill University | 2021<br>
+                            Full funding merit-based award</p>
+                        <p class="card-text"><strong>MEUSMA Award</strong>, McGill University | 2019-2021<br>
+                            Full funding merit-based award</p>
+                        <p class="card-text"><strong>Golden Key International Honor Society Scholar</strong>, McGill
+                            Chapter | Sept 2019<br>
+                            Graduated in the top 15% of the program and joined Golden Key, the world’s largest society
+                            promoting academic excellence</p>
+                        <p class="card-text"><strong>Robert Forsyth Prize in Civil Engineering</strong>, McGill Chapter
+                            | Apr 2018<br>
+                            Sole winner of the Robert Forsyth award for high standing in the subjects of theory of
+                            structural design</p>
+                        <p style="font-size:11px;"><a href="{{url_for('award')}}">Award list</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="text-align:center"><span><a href="{{url_for('home')}}">Home</a> · <a href="{{url_for('eng')}}">Engineering</a> · <a
+            href="{{url_for('grad')}}">Graduate</a></span></div>
+</main>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
