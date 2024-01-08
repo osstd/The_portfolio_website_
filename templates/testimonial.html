@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Omar Shemy</title>
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.png') }}">
     <style>
@@ -43,11 +43,11 @@
 </head>
 <body>
 <div>
-    <h1 style="margin-top:25px; margin-bottom:40px;">Viewer</h1>
+    <h1 style="margin-top:25px; margin-bottom:25px;">Viewer</h1>
 </div>
 <main>
     <div id="view-container">
-        <iframe src="{{path}}" width="800" height="600" frameborder="0"></iframe>
+        <iframe src="{{path}}" frameborder="0"></iframe>
     </div>
 </main>
 <footer>
