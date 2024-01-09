@@ -10,13 +10,12 @@
     footer {
       background-color: #062081;
       color: #fff;
+      font-size: 0.65rem;
       padding: 10px 0;
-    }
-    footer {
-    text-align: center;
-    position: sticky;
-    bottom: 0;
-    width: 100%;
+      text-align: center;
+      position: sticky;
+      bottom: 0;
+      width: 100%;
     }
 
     .navbar-nav {
