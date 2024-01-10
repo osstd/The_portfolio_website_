@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
 from flask_bootstrap import Bootstrap5
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, SubmitField, validators
+from wtforms import StringField, SubmitField, validators
 from wtforms.validators import DataRequired, Email, Regexp, Length
+from flask_ckeditor import CKEditorField
+from email.mime.text import MIMEText
 import smtplib
 from twilio.rest import Client
 import os
@@ -19,7 +21,7 @@ class ContactForm(FlaskForm):
     phone = StringField('Phone Number',
                         validators=[validators.Optional(), Regexp(r'^\d{10}$', message="Invalid phone number")],
                         render_kw={"placeholder": "Cell(optional): if you prefer a callback"})
-    message = TextAreaField('Message', validators=[DataRequired(), Length(max=1000)],
+    message = CKEditorField('Message', validators=[DataRequired(), Length(max=1000)],
                             render_kw={"placeholder": "Your message ...\nMax characters: 1000"})
     email_button = SubmitField('Send Email', render_kw={"class": "btn-custom"})
     text_button = SubmitField('Send Text', render_kw={"class": "btn-custom"})
@@ -30,22 +32,32 @@ def send_email(message):
     my_email = os.environ.get("E_ID")
     password = os.environ.get("E_KEY")
     email_to = os.environ.get("E_ID_TO")
-    with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
-        connection.starttls()
-        connection.login(user=my_email, password=password)
-        connection.sendmail(from_addr=my_email,
-                            to_addrs=email_to,
-                            msg=message)
-        connection.close()
+    try:
+        with smtplib.SMTP("smtp.gmail.com", port=587) as connection:
+            connection.starttls()
+            connection.login(user=my_email, password=password)
+            connection.sendmail(from_addr=my_email,
+                                to_addrs=email_to,
+                                msg=message.as_string())
+            connection.close()
+            return "Email sent successfully!"
+    except smtplib.SMTPException as e:
+        return f"Error sending email: {e}"
+    except Exception as e:
+        return f"Unexpected error: {e}"
 
 
 def send_text(message):
-    client = Client(os.environ.get('A_ID'), os.environ.get('A_T'))
-    client.messages.create(
-        body=message,
-        from_=os.environ.get('S_ID'),
-        to=os.environ.get('T_ID')
-    )
+    try:
+        client = Client(os.environ.get('A_ID'), os.environ.get('A_T'))
+        client.messages.create(
+            body=message,
+            from_=os.environ.get('S_ID'),
+            to=os.environ.get('T_ID')
+        )
+        return "Text message sent successfully!"
+    except Exception as e:
+        return f"Error sending text message: {e}"
 
 
 @app.route('/')
@@ -121,16 +133,18 @@ def contact():
         email = request.form['email']
         message = request.form['message']
         if 'email_button' in request.form:
-            send_email(
-                message=f"Subject: New message from {name}\n\nName: {name}\nEmail: {email}\nPhone: {phone}\nMessage: "
-                        f"\n{message}")
-            flash('Email has been sent successfully')
+            subject = f"New message from {name}"
+            body = f"Name: {name}\nEmail: {email}\nPhone: {phone}\nMessage:\n{message}"
+            msg = MIMEText(body, 'plain', 'utf-8')
+            msg['Subject'] = subject
+            result = send_email(msg)
+            flash(result)
             return render_template('contact.html', form=form)
         if 'text_button' in request.form:
-            send_text(
+            result = send_text(
                 message=f"Subject: New message from {name}\n\nName: {name}\nEmail: {email}\nPhone: {phone}\nMessage: "
                         f"\n{message}")
-            flash('Text message has been sent successfully')
+            flash(result)
             return render_template('contact.html', form=form)
     return render_template('contact.html', form=form)
 
