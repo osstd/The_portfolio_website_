@@ -80,11 +80,6 @@ def experience():
     return render_template('experience.html')
 
 
-@app.route('/blog')
-def blog():
-    return render_template('blog.html')
-
-
 @app.route('/eng')
 def eng():
     return render_template('eng.html')
